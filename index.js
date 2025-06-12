@@ -65,7 +65,7 @@ app.get('/', async(req,res)=> {
         }
         res.render('index' ,{ lists : getlist } )
     } catch (error) {
-        console.log('error getting todo'+ error);
+        console.log('error getting todo'+ error); 
     }
 
 })
@@ -135,7 +135,6 @@ app.post('/update/:id' , async (req,res)=>{
             console.log('couldnt find list to be updated ');
         }else{
             console.log('updating list..'+ ListToUpdate );
-
         }
         res.redirect('/')
         
@@ -152,7 +151,7 @@ app.post('/update/:id' , async (req,res)=>{
 
 
 
-const port = 3000 || process.env.PORT
+const port =  process.env.PORT ||  3000
 app.listen(port , ()=> {
     console.log('we are running on http://localhost:'+ port);
 })
